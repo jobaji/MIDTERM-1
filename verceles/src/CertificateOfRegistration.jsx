@@ -56,6 +56,7 @@ const CertificateOfRegistration = () => {
     if (file) {
       const reader = new FileReader();
       reader.onload = () => {
+        localStorage.setItem("uploadedImage", reader.result);
         setUploadedImage(reader.result);
       };
       reader.readAsDataURL(file);
@@ -63,6 +64,11 @@ const CertificateOfRegistration = () => {
   };
 
   useEffect(() => {
+    const savedImage = localStorage.getItem("uploadedImage");
+    if (savedImage) {
+    setUploadedImage(savedImage);
+    }
+
     const updateDate = () => {
       const now = new Date();
       const day = String(now.getDate()).padStart(2, "0");
@@ -308,7 +314,9 @@ const CertificateOfRegistration = () => {
               <tr>
                 <td
                   colSpan={4}
-                  style={{}}
+                  style={{
+                    fontSize: "62.5%",
+                  }}
                 >
                   <input
                     type="text"
@@ -326,9 +334,9 @@ const CertificateOfRegistration = () => {
                     }}
                   />
                 </td>
-              </tr>
               
-              <tr>
+              
+              
               <td
                 colSpan={13}
                 style={{
@@ -352,8 +360,8 @@ const CertificateOfRegistration = () => {
                   }}
                 />
               </td>
-              </tr>
-              <tr>
+              
+              
               <td
                 colSpan={3}
                 style={{
@@ -378,9 +386,9 @@ const CertificateOfRegistration = () => {
                   }}
                 />
               </td>
-              </tr>
+              
 
-              <tr>
+              
               <td
                 colSpan={14}
                 style={{
