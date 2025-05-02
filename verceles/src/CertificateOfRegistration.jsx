@@ -44,11 +44,11 @@ const CertificateOfRegistration = () => {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
+        localStorage.setItem("uploadedSignature", reader.result);
         setUploadedSignature(reader.result);
       };
       reader.readAsDataURL(file);
     }
-    event.target.value = "";
   };
 
   const handleImageUpload = (event) => {
@@ -65,9 +65,11 @@ const CertificateOfRegistration = () => {
 
   useEffect(() => {
     const savedImage = localStorage.getItem("uploadedImage");
-    if (savedImage) {
-    setUploadedImage(savedImage);
-    }
+    const savedSignature = localStorage.getItem("uploadedSignature");
+
+    if (savedSignature) setUploadedSignature(savedSignature);
+    if (savedImage) setUploadedImage(savedImage);
+    
 
     const updateDate = () => {
       const now = new Date();
