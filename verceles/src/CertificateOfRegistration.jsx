@@ -348,19 +348,19 @@ const CertificateOfRegistration = () => {
                 }}
               >
                 <input
-                  type="text"
-                  value={":234-14491M"}
-                  readOnly
-                  style={{
-                    color: "black",
-                    width: "98%",
-                    fontFamily: 'Arial, sans-serif',
-                    fontSize: '12px',
-                    border: "none",
-                    outline: "none",
-                    background: "none"
-                  }}
-                />
+                type="text"
+                value={filteredData[0]?.student_no ? `: ${filteredData[0].student_no}` : ""}
+                readOnly
+                style={{
+                  color: "black",
+                  width: "98%",
+                  fontFamily: 'Arial, sans-serif',
+                  fontSize: '12px',
+                  border: "none",
+                  outline: "none",
+                  background: "none"
+                }}
+              />
               </td>
               
               
@@ -401,7 +401,7 @@ const CertificateOfRegistration = () => {
               >
                 <input
                   type="text"
-                  value={" : College of Computing Studies"}
+                  value={filteredData[0]?.college ? `: ${filteredData[0].college}` : ""}
                   readOnly
                   style={{
                     color: "black",
@@ -451,7 +451,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={":VERCELES, JESTIN JOHN DELA CRUZ"}
+                    value={filteredData[0]?.name ? `: ${filteredData[0].name}` : ""}
                     readOnly
                     style={{
                       color: "black",
@@ -498,7 +498,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={" : Bachelor of Science in Information Technology"}
+                    value={filteredData[0]?.program ? `: ${filteredData[0].program}` : ""}
                     readOnly
                     style={{
                       color: "black",
@@ -547,7 +547,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={":Male"}
+                    value={filteredData[0]?.gender ? `: ${filteredData[0].gender}` : ""}
                     readOnly
                     style={{
                       color: "black",
@@ -570,7 +570,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Major         :"}
+                    value={"Major       :"}
                     readOnly
                     style={{
                       fontWeight: "bold",
@@ -621,7 +621,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={": 2018 - 2019"}
+                    value={filteredData[0]?.curriculum ? `: ${filteredData[0].curriculum}` : ""}
                     readOnly
                     style={{
                       color: "black",
@@ -672,7 +672,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={":22"}
+                    value={filteredData[0]?.age ? `: ${filteredData[0].age}` : ""}
                     readOnly
                     style={{
                       color: "black",
@@ -695,7 +695,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Year Level :"}
+                    value={"Year Level"}
                     readOnly
                     style={{
                       fontWeight: "bold",
@@ -720,7 +720,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Third Year- Iregular"}
+                    value={filteredData[0]?.year_level ? `: ${filteredData[0].year_level}`: ""}
                     readOnly
                     style={{
                       fontFamily: 'Arial, sans-serif',
@@ -734,7 +734,7 @@ const CertificateOfRegistration = () => {
                   />
                 </td>
                 <td
-                  colSpan={12}
+                  colSpan={7}
 
                   style={{
 
@@ -744,7 +744,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Scholarship/Discount : UNIFAST-FHE"}
+                    value={"Scholarship/Discount"}
                     readOnly
                     style={{
                       fontWeight: "bold",
@@ -758,6 +758,30 @@ const CertificateOfRegistration = () => {
                     }}
                   />
 
+                </td>
+                <td
+                  colSpan={6}
+
+                  style={{
+
+                    fontSize: "50%",
+
+                  }}
+                >
+                  <input
+                    type="text"
+                    value={filteredData[0]?.scholarship_discount ? `: ${filteredData[0].scholarship_discount}` : ""}
+                    readOnly
+                    style={{
+                      fontFamily: 'Arial, sans-serif',
+                      fontSize: '12px',
+                      color: "black",
+                      width: "98%",
+                      border: "none",
+                      outline: "none",
+                      background: "none"
+                    }}
+                  />
                 </td>
 
 
@@ -775,7 +799,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Email Address:"}
+                    value={"Email Address"}
                     readOnly
                     style={{
                       color: "black",
@@ -799,7 +823,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"majorj0349@gmail.com"}
+                    value={filteredData[0]?.email_address ? `: ${filteredData[0].email_address}`: ""}
                     readOnly
                     style={{
                       color: "black",
@@ -997,7 +1021,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.eligibilityName || "IAASLEC1"}
+                        value={item.subject_code || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1022,7 +1046,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.eligibilityRating || "Information Assurance and Security 1 (Lecture)"}
+                        value={item.subject_title || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1044,7 +1068,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.eligibilityDateOfExam || "2"}
+                        value={item.lec_units || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1067,7 +1091,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.eligibilityPlaceOfExam || "0"}
+                        value={item.lab_units || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1090,7 +1114,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.licenseNumber || "2"}
+                        value={item.credit_units || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1113,7 +1137,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.DateOfValidity || "2"}
+                        value={item.tuition_units || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1136,7 +1160,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.DateOfValidity || "BSINFOTECH 3C"}
+                        value={item.subject_section || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1159,7 +1183,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.DateOfValidity || "TH 04:00PM-06:00PM"}
+                        value={item.subject_schedule_room || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -1182,7 +1206,7 @@ const CertificateOfRegistration = () => {
                     >
                       <input
                         type="text"
-                        value={item.DateOfValidity || "RUTAQUIO, LARRY"}
+                        value={item.subject_faculty || ""}
                         readOnly
                         style={{
                           color: "black",
@@ -3604,20 +3628,14 @@ const CertificateOfRegistration = () => {
 
             
 
-                <td
-                  colSpan={1}
-                  style={{
-
-                    fontSize: "55%",
-
-                    color: "black",
-
-                    textAlign: "center",
-                  }}
-                >  
-                <b>
-                24</b>
-                </td>
+                <td colSpan={1} 
+                style={{ 
+                  fontSize: "55%", 
+                  color: "black", 
+                  textAlign: "center" 
+                  }}>
+                  <b>{filteredData[0]?.total_lec_units || ""}</b>
+                  </td>
 
                 <td
                   colSpan={1}
@@ -3630,8 +3648,8 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
-                  <b>
-                    4</b>
+                <b>{filteredData[0]?.total_lab_units || ""}</b>
+
                 </td>
 
                 <td
@@ -3645,8 +3663,7 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >  
-                <b>
-                28</b>
+                <b>{filteredData[0]?.total_credit_units || ""}</b>
                 </td>
                 <td
                   colSpan={2}
@@ -3659,8 +3676,8 @@ const CertificateOfRegistration = () => {
                     textAlign: "center",
                   }}
                 >
-                  <b>
-                  28</b>
+                <b>{filteredData[0]?.total_tuition || ""}</b>
+
                 </td>
 
             
@@ -3746,7 +3763,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"2100.00"}
+                    value={filteredData[0]?.tuition ? `${filteredData[0].tuition}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -3832,7 +3849,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"50.00"}
+                    value={filteredData[0]?.athletic_fee ? `${filteredData[0].athletic_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -3912,7 +3929,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"50.00"}
+                    value={filteredData[0]?.cultural_fee ? `${filteredData[0].cultural_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -3992,7 +4009,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"30.00"}
+                    value={filteredData[0]?.development_fee ? `${filteredData[0].development_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4072,7 +4089,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"30.00"}
+                    value={filteredData[0]?.guidance_fee ? `${filteredData[0].guidance_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4152,7 +4169,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"100.00"}
+                    value={filteredData[0]?.library_fee ? `${filteredData[0].library_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4206,7 +4223,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"130.00"}
+                    value={filteredData[0]?.medical_dental_fee ? `${filteredData[0].medical_dental_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4285,7 +4302,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"50.00"}
+                    value={filteredData[0]?.registration_fee ? `${filteredData[0].registration_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4353,7 +4370,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"500.00"}
+                    value={filteredData[0]?.computer_fee ? `${filteredData[0].computer_fee}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4505,7 +4522,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"3090.00"}
+                    value={filteredData[0]?.total_assessment ? `${filteredData[0].total_assessment}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4571,7 +4588,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"3090.00"}
+                    value={filteredData[0]?.less_financial_aid ? `${filteredData[0].less_financial_aid}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4593,10 +4610,10 @@ const CertificateOfRegistration = () => {
                 <td
                   colSpan={2}
                   style={{
-
-
+                    fontSize: "62.5%",
                     marginRight: "20px",
 
+                    borderRight: "1px solid black",
                   }}
                 >
 
@@ -4637,7 +4654,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={filteredData[0]?.net_assessed ? `${filteredData[0].net_assessed}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4652,7 +4669,7 @@ const CertificateOfRegistration = () => {
                     }}
                   />
                 </td>
-
+                
 
                 <td
                   colSpan={20}
@@ -4699,7 +4716,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Less Financial Aid : "}
+                    value={"Credit Memo : "}
                     readOnly
                     style={{
                       color: "black",
@@ -4725,7 +4742,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={filteredData[0]?.credit_memo ? `${filteredData[0].credit_memo}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4788,7 +4805,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Medical and Dental Fee : "}
+                    value={"Total_Discount: "}
                     readOnly
                     style={{
                       color: "black",
@@ -4814,7 +4831,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={filteredData[0]?.total_discount ? `${filteredData[0].total_discount}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4853,7 +4870,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Registration Fee : "}
+                    value={"Total Payment: "}
                     readOnly
                     style={{
                       color: "black",
@@ -4879,7 +4896,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={filteredData[0]?.total_payment ? `${filteredData[0].total_payment}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -4918,7 +4935,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Computer Fee : "}
+                    value={"Outstanding Fee : "}
                     readOnly
                     style={{
                       color: "black",
@@ -4944,7 +4961,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"0.00"}
+                    value={filteredData[0]?.outstanding_balance ? `${filteredData[0].outstanding_balance}` : ""}
                     readOnly
                     style={{
                       textAlign: "left",
@@ -5376,7 +5393,7 @@ const CertificateOfRegistration = () => {
                 >
                   <input
                     type="text"
-                    value={"Scholar  _____"}
+                    value={filteredData[0]?.official_receipt ? `${filteredData[0].official_receipt}` : ""}
                     readOnly
                     style={{
                       color: "black",
