@@ -1223,6 +1223,92 @@ const CertificateOfRegistration = () => {
                 );
               })}
 
+              <tr>
+                <td
+                  colSpan={12}
+                  style={{
+                    height: "0.1in",
+                    fontSize: "55%",
+                    color: "black",
+                  }}
+                >
+                  <b>
+                    <i>Note: Subject marked with "*" is Special Subject.</i>
+                  </b>
+                </td>
+                <td
+                  colSpan={4}
+                  style={{
+                    height: "0.1in",
+                    fontSize: "55%",
+
+                    color: "black",
+
+                    textAlign: "center",
+                  }}
+                >
+                  <b>
+                    Total Unit(s)</b>
+                </td>
+
+          
+
+            
+
+                <td colSpan={1} 
+                style={{ 
+                  fontSize: "55%", 
+                  color: "black", 
+                  textAlign: "center" 
+                  }}>
+                  <b>{filteredData[0]?.total_lec_units || ""}</b>
+                  </td>
+
+                <td
+                  colSpan={1}
+                  style={{
+
+                    fontSize: "55%",
+
+                    color: "black",
+
+                    textAlign: "center",
+                  }}
+                >
+                <b>{filteredData[0]?.total_lab_units || ""}</b>
+
+                </td>
+
+                <td
+                  colSpan={2}
+                  style={{
+
+                    fontSize: "55%",
+
+                    color: "black",
+
+                    textAlign: "center",
+                  }}
+                >  
+                <b>{filteredData[0]?.total_credit_units || ""}</b>
+                </td>
+                <td
+                  colSpan={2}
+                  style={{
+
+                    fontSize: "55%",
+
+                    color: "black",
+
+                    textAlign: "center",
+                  }}
+                >
+                <b>{filteredData[0]?.total_tuition || ""}</b>
+
+                </td>
+
+            
+              </tr>
 
               <tr>
                 <td
